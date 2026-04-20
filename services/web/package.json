@@ -9,7 +9,7 @@
     "@ant-design/pro-components": "^2.7.15",
     "@rcb-plugins/markdown-renderer": "^0.3.1",
     "@reduxjs/toolkit": "^2.2.7",
-    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/jest-dom": "6.0.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "^16.18.106",
@@ -76,7 +76,7 @@
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@babel/preset-react": "^7.24.1",
     "@types/uuid": "^10.0.0",
-    "copy-webpack-plugin": "^6.3.2",
+    "copy-webpack-plugin": "7.0.0",
     "eslint-config-react-app": "^7.0.1",
     "prettier": "^3.3.3"
   },

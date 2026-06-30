@@ -58,7 +58,7 @@ dependencies {
     implementation("com.nimbusds:nimbus-jose-jwt:9.37.3")
     implementation("jakarta.validation:jakarta.validation-api:3.0.2")
     implementation("org.postgresql:postgresql:runtime")
-    implementation("org.postgresql:postgresql:42.4.0")
+    implementation("org.postgresql:postgresql:42.7.11")
     implementation("com.google.cloud:google-cloud-storage:2.10.0")
     implementation("org.apache.logging.log4j:log4j-api:${log4jVersion}")
     implementation("org.apache.logging.log4j:log4j-core:${log4jVersion}")

@@ -62,8 +62,7 @@ func (s *Server) AddNewCoupon(w http.ResponseWriter, r *http.Request) {
 // Server have database connection
 func (s *Server) ValidateCoupon(w http.ResponseWriter, r *http.Request) {
 
-	//coupon := models.CouponBody{}
-	var bsonMap bson.M
+	coupon := models.Coupon{}
 
 	body, err := io.ReadAll(r.Body)
 	defer func() {
@@ -76,13 +75,13 @@ func (s *Server) ValidateCoupon(w http.ResponseWriter, r *http.Request) {
 		log.Println("No payload for ValidateCoupon", string(body), err)
 		return
 	}
-	err = json.Unmarshal(body, &bsonMap)
+	err = json.Unmarshal(body, &coupon)
 	if err != nil {
 		responses.ERROR(w, http.StatusUnprocessableEntity, err)
 		log.Println("Failed to read json body", err)
 		return
 	}
-	couponData, err := models.ValidateCode(s.Client, s.DB, bsonMap)
+	couponData, err := models.ValidateCode(s.Client, s.DB, bson.M{"coupon_code": coupon.CouponCode})
 
 	if err != nil {
 		log.Println("Error fetching Coupon", couponData, err)
